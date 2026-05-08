@@ -3913,7 +3913,7 @@
 
       el.innerHTML = `
     <div class="pc-img" onclick="openModal(${p.id})" role="button" tabindex="0" aria-label="View ${p.name} details">
-      <img src="${v.imgs[0]}" alt="${p.name} Premium Canvas Tote Bag Pakistan" loading="lazy" decoding="async"
+      <img src="${v.imgs[0]}" alt="${p.name} Premium Canvas Tote Bag Pakistan" loading="lazy" decoding="async" ${i < 4 ? 'fetchpriority="high"' : ''}
            onload="this.closest('.pc-img').classList.add('loaded')">
       <div class="pc-cat">${p.cat}</div>
       ${badgeHTML}
@@ -4183,11 +4183,18 @@
       document.body.style.overflow = '';
     }
     function checkout() { toast('Checkout coming soon! Use WhatsApp to order now.'); }
+    let waDebounce = 0;
     function customOrderWA() {
-      const msg = 'Hey Drip, I want to customiasde my order';
+      const now = Date.now();
+      if (now - waDebounce < 500) return;
+      waDebounce = now;
+      const msg = 'Hey Drip, I want to customize my order. Looking forward to your reply at your earliest.';
       window.open(`https://wa.me/923214614145?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
     }
     function checkoutWA() {
+      const now = Date.now();
+      if (now - waDebounce < 500) return;
+      waDebounce = now;
       if (!cart.length) { toast('Your cart is empty!'); return; }
       const lines = cart.map(i => `• ${i.name} (${i.color}) x${i.qty} — PKR ${(i.price * i.qty).toLocaleString()}`).join('\n');
       const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
