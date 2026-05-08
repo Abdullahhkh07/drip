@@ -1,0 +1,40 @@
+DRIP WEBSITE CONTEXT
+
+Brand:
+DRIP
+
+Style:
+Luxury minimal tote bag brand.
+Dark Apple-inspired aesthetic.
+Smooth animations.
+Premium feel.
+
+Products:
+7 tote bag designs.
+
+Each design has:
+- black variant
+- white variant
+
+IMPORTANT:
+Black/white should NOT be separate products.
+Use color toggles instead.
+
+Important issue:
+Previous website had laggy color switching.
+Need instant switching and smooth transitions.
+
+Current state:
+Website already exists.
+Do NOT restart from scratch.
+Improve existing code only.
+
+Rules:
+- reusable components
+- responsive design
+- smooth performance
+- premium UI
+- cinematic feel
+
+Uploaded photos are only examples.
+Use placeholders for remaining products.
